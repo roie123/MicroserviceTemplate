@@ -1,0 +1,6 @@
+server:
+  port: 8088
+
+spring:
+  profiles:
+    active: native   # this is the profile that will be used to read the configuration from the local file system
