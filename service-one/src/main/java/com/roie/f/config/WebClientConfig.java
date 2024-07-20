@@ -4,6 +4,7 @@ package com.roie.f.config;
 import com.roie.f.client.SomeGenericClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.client.loadbalancer.reactive.LoadBalancedExchangeFilterFunction;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,6 +20,7 @@ public class WebClientConfig {
     private LoadBalancedExchangeFilterFunction lbFunction;
 
     @Bean
+    @LoadBalanced
     public WebClient someGenericWebClient() {
         return WebClient.builder()
                 //TODO change the name of the service to call
